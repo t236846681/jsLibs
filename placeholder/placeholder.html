@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>placeholder</title>
+    <script src="http://huodong.show.baomihua.com/js/jquery-1.7.min.js"></script>
+    <!--<script type="text/javascript" src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy.js">-->
+    <!--</script>-->
+    <script type="text/javascript" src="placeholder.js"></script>
+
+    <style type="text/css">
+        .login-ct {
+            overflow: hidden;
+            border: 1px solid #ebebed;
+            padding: 20px 5px;
+            margin: 5px;
+            background-color: #f9f9f9;
+        }
+        .login-ct .name {
+            /*background: url("../images/zhanghao.png") left center no-repeat;*/
+            margin-bottom: 12px;
+        }
+        .login-ct .pass {
+            /*background: url("../images/mima.png") left center no-repeat;*/
+        }
+        .login-txt {
+            width: 166px;
+            height: 28px;
+            border: 1px solid #ebebeb;
+            padding-left: 42px;
+            margin-bottom: 16px;
+            line-height: 28px;
+        }
+        .btn-ct {
+            overflow: hidden;
+        }
+        .btn-ct input {
+            width: 87px ;
+            height: 33px;
+            text-indent: -9999px;
+            font-size: 0px;
+            cursor: pointer;
+            border: none;
+            float: left;
+            display: inline;
+        }
+        .btn-ct .btn-login {
+            /*background: url("../images/login.png") no-repeat;*/
+            margin-left: 5px;
+        }
+        .btn-ct .btn-reg {
+            /*background: url("../images/create.png") no-repeat;*/
+            margin-left: 12px;
+        }
+
+    </style>
+    <style type="text/css">
+        .place-ct {
+            position: relative;
+        }
+        .place-ct label {
+            position: absolute;
+            top: 7px;
+            left: 45px;
+            color: #cacaca;
+            z-index: 0;
+            cursor: text;
+        }
+    </style>
+</head>
+<body style=" ">
+
+<div id="J_login" class="login-ct">
+    <div class="place-ct">
+        <input class="name login-txt" autocomplete="off" type="text" placeholder="请输入你的账号"/>
+    </div>
+    <div class="place-ct">
+        <input autocomplete="off" class="pass login-txt" type="password" placeholder="请输入你的密码"/>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $("document").ready(function(){
+        //检测是否支持placeholder属性
+        var supportPlaceholder = 'placeholder' in document.createElement('input');
+
+//        if(!supportPlaceholder){
+            alert(1)
+            var p = new $.PlaceHolder(" #J_login .login-txt",".login-txt");
+            p.inits();
+//        }
+    });
+
+
+</script>
+</body>
+</html>

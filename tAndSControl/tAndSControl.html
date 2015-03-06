@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>购卡</title>
+
+<body screen_capture_injected="true">
+
+<p>
+    需要定义id和option的内容，取值通过hidden组件，同时根据id调用方法tAndSControl()，具体看源代码.
+</p>
+
+<!--需要定义id和option的内容，取值通过hidden组件-->
+<div id="J_tAndS_control">
+    <input type="text" class="J_tAndS_txt" style="display: none;" value=""/>
+    <select id="" class="J_tAndS_select">
+        <option value="255.255.255.0">255.255.255.0</option>
+        <option value="255.255.0.0">255.255.0.0</option>
+        <option value="255.0.0.0">255.0.0.0</option>
+        <option value="-9999">-- 自定义 --</option>
+    </select>
+    <input name="" type="hidden" class="J_tAndS_hidden"/>
+</div>
+
+
+<script type="text/javascript" src="http://localhost/hichinawifi/misc/common/frontend/custom_v2/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="tAndSControl.js"></script>
+<script>
+    $(document).ready(function(){
+        tAndSControl("#J_tAndS_control");
+    })
+</script>
+</body>
+
+</html>
