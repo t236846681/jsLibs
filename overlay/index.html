@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>浮层插件</title>
+    <script src="http://static01.baomihua.com/js/lib/jquery-1.4.4.min.js?t=20120926.js"></script>
+    <script type="text/javascript" src="../../plugs/mask/mask.js"></script>
+    <script type="text/javascript" src="mask.js"></script>
+    <script type="text/javascript" src="overlay.js"></script>
+    <style type="text/css">
+        .ov-ct{
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            background-color: red;
+        }
+        .ov-close{
+            position: absolute;
+            right: 0px;
+            top:0px;
+        }
+        .ov-main-ct{
+            width: 200px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body style="height: 2000px; ">
+    <h1>浮层插件</h1>
+    <p>1.浮层居中</p>
+    <p>2.浮层fixed居中</p>
+    <p>3.浮层相对于某个元素定位</p>
+</body>
+<script id="J_popup" type="text/html">
+    <div class="J_main_ct ov-main-ct">
+        我是浮层内容体
+    </div>
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var ov = new $.overlay({
+            el:"#J_popup",
+            elCls:"J_ov_cts",
+            offset:['cc','cc'],
+            width:200,
+            height:100
+        });
+
+        $("body").delegate("h1","click",function(){
+            ov.show();
+        });
+
+        $("body").delegate(".J_ov_close","click",function(){
+            ov.hide();
+        });
+    })
+</script>
+</html>

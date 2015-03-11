@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    $("documnet").ready(function(){
+        //ie6不支持元素hover的hack
+        var br =$.browser, UAIe6 = br.msie && br.version < 7;
+        if(UAIe6 == true){
+        //ie6不支持fixed的hack
+            $(window).bind("scroll",function(){
+                fixed(120,".right-fix");
+            })
+        }
+        //ie6不支持fixed的hack
+        /**
+         *
+         * @param top_length 距离顶部的距离
+         * @param el  浮动的元素 
+         */
+        function fixed(top_length,el){
+            var scroll_top = $(window).scrollTop();
+            var el = $(el);
+            el.css({
+                top:scroll_top + top_length + "px"
+            });
+        }
+    });
+</script>
+
+
+
+         $("#backToTop").click(function(){
+                        window.scrollTo(0,0);
+                    });
+                    $(window).bind("scroll",function(){
+                        var scroll_top = $(window).scrollTop();
+                        if(scroll_top >= 200){
+                            $("#backToTop").show();
+                        }else if(scroll_top < 200){
+                            $("#backToTop").hide();
+                        }
+                    })

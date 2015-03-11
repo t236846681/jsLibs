@@ -5,7 +5,7 @@
  * Time: 下午5:31
  * To change this template use File | Settings | File Templates.
  */
-//实现placeholder，主要是为了支持input:password，html结构必须保持一致
+//实现placeholder，主要是为了支持input，html结构必须保持一致
 (function($){
     //获取value值
     function getVal(el){

@@ -1,0 +1,11 @@
+{
+  "name": "offline",
+  "version":"1.1",
+  "author": {
+    "name": "bofang",
+    "email": "bofang.zxj@taobao.com"
+  },
+  "date":"",
+  "fileoverview":"",
+  "list":"./{version}/tmp, ./{version}/index.html, ./{version}/index.js, ./index.html, ./README.md,./{version}/guide/index.md"
+}

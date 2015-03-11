@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>懒加载</title>
+    <script type="text/javascript" src="http://static01.baomihua.com/js/lib/jquery-1.4.4.min.js?t=20120926.js"></script>
+    <script type="text/javascript" src="datalazyload.js"></script>
+    <link rel="stylesheet" href="http://static01.show.baomihua.com/home/show/css/index.css"/>
+    <!--<link rel="stylesheet" href="http://static01.baomihua.com/css/www/v1/idx-min.css?t=20130608.css"/>-->
+    <style type="text/css">
+        .invisible{
+            visibility: hidden;
+        }
+.phx-waterfall img{
+    display: block;
+}
+        .da-ct{
+            width: 650px;
+        }
+        img{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="da-ct">
+<!--<div style="height: 1500px">-->
+    <!--2-->
+
+<!--</div>-->
+<div class="other-ct ">
+    <div class="middle-header">
+        <h2 class="middle-title"><a href="/StaticTemplace/www/AnchorList.aspx?type=4" target="_blank" title="好声音">
+            好声音
+        </a></h2>
+        <p class="middle-p">
+            <a href="http://s.baomihua.com/?from=index_goodvoice" target="_blank">用水葫芦随时和主播聊天吧！</a>
+        </p>
+        <a class="more" href="/StaticTemplace/www/AnchorList.aspx?type=4" target="_blank">更多&gt;</a>
+    </div>
+    <div id="haoshengyinzhubo">
+
+
+        <div class="other-zb-ct">
+            <ul class="other-zb-list">
+
+                <li class="live">
+                    <a class="img" href="http://live.baomihua.com/100609" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130903/113C8B96599A43CE81E1EBCF524901E5.jpg" width="134" height="100" title="S 小壹">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        85人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=19" target="_blank" title="龙翔九天"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/A1DB5FD53ECD457F9AB540BE47C7C6B3.png" width="32" height="14" alt="龙翔九天"></a>
+                        <a href="http://live.baomihua.com/100609" title="S 小壹" target="_blank" class="name2">
+                            S 小壹
+                        </a>
+                        <img class="zhuboLevel zhuboLv_9" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级9">
+                    </div>
+                </li>
+
+                <li class="live">
+                    <a class="img" href="http://live.baomihua.com/100635" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130618/0F3B5D3BC2FF47F18B612DEFDD7ACD6A.jpg" width="134" height="100" title="梅子。">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        743人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=18" target="_blank" title="炫音传奇"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/80DE7CF7EB7441778472BBAB98A0FF6C.png" width="32" height="14" alt="炫音传奇"></a>
+                        <a href="http://live.baomihua.com/100635" title="梅子。" target="_blank" class="name2">
+                            梅子。
+                        </a>
+                        <img class="zhuboLevel zhuboLv_10" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级10">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130714/DB7C03582F424437AB486A44720797FB.jpg" width="134" height="100" title="￠、冷魅ゝ">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        2人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=12" target="_blank" title="蕾之魅家"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/6DA42ACB1315495F8003F5E9AF3B5775.png" width="32" height="14" alt="蕾之魅家"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="￠、冷魅ゝ" target="_blank" class="name2">
+                            ￠、冷魅ゝ
+                        </a>
+                        <img class="zhuboLevel zhuboLv_18" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级18">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130830/B8A105F1E7BA4E0D813163E7365C94BD.jpg" width="134" height="100" title="初恋儿">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=35" target="_blank" title="红人馆"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130830/263873A6B15D49A9B7647D3BF28EAEAF.png" width="32" height="14" alt="红人馆"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="初恋儿" target="_blank" class="name2">
+                            初恋儿
+                        </a>
+                        <img class="zhuboLevel zhuboLv_0" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级0">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130909/51F00E1F0AF74387B1FB375B6E6F6721.jpg" width="134" height="100" title="浅唱那抹伤">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        2人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=35" target="_blank" title="红人馆"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130830/263873A6B15D49A9B7647D3BF28EAEAF.png" width="32" height="14" alt="红人馆"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="浅唱那抹伤" target="_blank" class="name2">
+                            浅唱那抹伤
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130606/59172B5BDB5F45DDB71286066B93326E.jpg" width="134" height="100" title="じ★び筱诺">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=19" target="_blank" title="龙翔九天"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/A1DB5FD53ECD457F9AB540BE47C7C6B3.png" width="32" height="14" alt="龙翔九天"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="じ★び筱诺" target="_blank" class="name2">
+                            じ★び筱诺
+                        </a>
+                        <img class="zhuboLevel zhuboLv_13" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级13">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130902/A6991DE07ED44850B7AF7E9F237ADF72.jpg" width="134" height="100" title="ＤＪ小信">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        6055人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=35" target="_blank" title="红人馆"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130830/263873A6B15D49A9B7647D3BF28EAEAF.png" width="32" height="14" alt="红人馆"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="ＤＪ小信" target="_blank" class="name2">
+                            ＤＪ小信
+                        </a>
+                        <img class="zhuboLevel zhuboLv_2" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级2">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130831/96A1AB3CAD63446FA8573B512C9B57A8.jpg" width="134" height="100" title="❥咪儿">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=36" target="_blank" title="开心一族"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130902/5355104A94D04D7AA94253A5A75A27B9.png" width="32" height="14" alt="开心一族"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="❥咪儿" target="_blank" class="name2">
+                            ❥咪儿
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="other-ct">
+    <div class="middle-header">
+        <h2 class="middle-title"><a href="/StaticTemplace/www/AnchorList.aspx?type=5" target="_blank" title="有气质">
+            有气质
+        </a></h2>
+        <p class="middle-p">
+            <a href="http://s.baomihua.com/?from=index_temperament" target="_blank">用水葫芦随时和主播聊天吧！</a>
+        </p>
+        <a class="more" href="/StaticTemplace/www/AnchorList.aspx?type=5" target="_blank">更多&gt;</a>
+    </div>
+    <div id="youqizhizhubo">
+
+        <div class="other-zb-ct">
+            <ul class="other-zb-list">
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130811/07F6FE5AEDDA4A6D9D275B85685A6CAB.png" width="134" height="100" title="Saltanat520">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=17" target="_blank" title="百丽艺佳人"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/78F4DF289B5A4E7096CD759EE04FF104.png" width="32" height="14" alt="百丽艺佳人"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="Saltanat520" target="_blank" class="name2">
+                            Saltanat520
+                        </a>
+                        <img class="zhuboLevel zhuboLv_0" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级0">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130913/EA42F1D7C6314E0A9EEFBD925ACD5D63.jpg" width="134" height="100" title="小臭子">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=16" target="_blank" title="爱乐章"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/9ED06AE73F6B4FCE839B352893331286.png" width="32" height="14" alt="爱乐章"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="小臭子" target="_blank" class="name2">
+                            小臭子
+                        </a>
+                        <img class="zhuboLevel zhuboLv_2" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级2">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130610/34CE8FC438CF4E1F8C167527A94AA704.jpg" width="134" height="100" title="丿KISS丶琪❤琪">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        7120人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=19" target="_blank" title="龙翔九天"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/A1DB5FD53ECD457F9AB540BE47C7C6B3.png" width="32" height="14" alt="龙翔九天"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="丿KISS丶琪❤琪" target="_blank" class="name2">
+                            丿KISS丶琪❤琪
+                        </a>
+                        <img class="zhuboLevel zhuboLv_15" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级15">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130607/7A9F0CF6B1AD4247BCC7B56063B0EA4C.jpg" width="134" height="100" title="萧小芊">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=19" target="_blank" title="龙翔九天"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/A1DB5FD53ECD457F9AB540BE47C7C6B3.png" width="32" height="14" alt="龙翔九天"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="萧小芊" target="_blank" class="name2">
+                            萧小芊
+                        </a>
+                        <img class="zhuboLevel zhuboLv_15" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级15">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130913/15A6CF4073264DD6ABE28BBE289A0B70.png" width="134" height="100" title="语歆">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=38" target="_blank" title="╰★貓族★つ"><img style="width:32px;height:14px;" src="" width="32" height="14" alt="╰★貓族★つ"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="语歆" target="_blank" class="name2">
+                            语歆
+                        </a>
+                        <img class="zhuboLevel zhuboLv_2" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级2">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130824/1C127CA0FF594B3D843E716F2BA12754.jpg" width="134" height="100" title="YQ夏小雨">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        2人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=17" target="_blank" title="百丽艺佳人"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/78F4DF289B5A4E7096CD759EE04FF104.png" width="32" height="14" alt="百丽艺佳人"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="YQ夏小雨" target="_blank" class="name2">
+                            YQ夏小雨
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130915/20507A185D024B3E92E7346A3F80B0B7.jpg" width="134" height="100" title="❥゛笨笨﹎ε»゛✿">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=36" target="_blank" title="开心一族"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130902/5355104A94D04D7AA94253A5A75A27B9.png" width="32" height="14" alt="开心一族"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="❥゛笨笨﹎ε»゛✿" target="_blank" class="name2">
+                            ❥゛笨笨﹎ε»゛✿
+                        </a>
+                        <img class="zhuboLevel zhuboLv_2" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级2">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130728/9F9169CDE870464FADC1D977FC725FF0.jpg" width="134" height="100" title="〆﹏小颖灬">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1072人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=19" target="_blank" title="龙翔九天"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/A1DB5FD53ECD457F9AB540BE47C7C6B3.png" width="32" height="14" alt="龙翔九天"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="〆﹏小颖灬" target="_blank" class="name2">
+                            〆﹏小颖灬
+                        </a>
+                        <img class="zhuboLevel zhuboLv_15" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级15">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+<!--<textarea class='jq-datalazyload invisible' style="height: 352px;">-->
+<div class="other-ct">
+    <div class="middle-header">
+        <h2 class="middle-title"><a href="/StaticTemplace/www/AnchorList.aspx?type=6" target="_blank" title="小清新">
+            小清新
+        </a></h2>
+        <p class="middle-p">
+            <a href="http://s.baomihua.com/?from=index_smallfresh" target="_blank">用水葫芦随时和主播聊天吧！</a>
+        </p>
+        <a class="more" href="/StaticTemplace/www/AnchorList.aspx?type=6" target="_blank">更多&gt;</a>
+    </div>
+    <div id="xiaoqingxinzhubo">
+
+        <div class="other-zb-ct">
+            <ul class="other-zb-list">
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130718/83E680DBF450462DB106533DCE3BB351.jpg" width="134" height="100" title="甜芯♫☂琳兒♨">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=18" target="_blank" title="炫音传奇"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/80DE7CF7EB7441778472BBAB98A0FF6C.png" width="32" height="14" alt="炫音传奇"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="甜芯♫☂琳兒♨" target="_blank" class="name2">
+                            甜芯♫☂琳兒♨
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130729/03AEA33E5C664EC4A7501B08FB879777.jpg" width="134" height="100" title="小姑凉♥灬丫丫">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=30" target="_blank" title="蓝调"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/DB4E069BC24E45899A260E8A00934B99.png" width="32" height="14" alt="蓝调"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="小姑凉♥灬丫丫" target="_blank" class="name2">
+                            小姑凉♥灬丫丫
+                        </a>
+                        <img class="zhuboLevel zhuboLv_12" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级12">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130801/0E7D04ACE33B482DB56D4FBB13A9E7AC.jpg" width="134" height="100" title="︶ㄣ心醉">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=18" target="_blank" title="炫音传奇"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/80DE7CF7EB7441778472BBAB98A0FF6C.png" width="32" height="14" alt="炫音传奇"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="︶ㄣ心醉" target="_blank" class="name2">
+                            ︶ㄣ心醉
+                        </a>
+                        <img class="zhuboLevel zhuboLv_8" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级8">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130619/3564BB3658884A8180C9E0F0A9E812EB.jpg" width="134" height="100" title="Komi敏敏">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=17" target="_blank" title="百丽艺佳人"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/78F4DF289B5A4E7096CD759EE04FF104.png" width="32" height="14" alt="百丽艺佳人"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="Komi敏敏" target="_blank" class="name2">
+                            Komi敏敏
+                        </a>
+                        <img class="zhuboLevel zhuboLv_7" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级7">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130801/CD198A8957084420A577E72D65B53CC5.jpg" width="134" height="100" title="〃坏坏〓">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=19" target="_blank" title="龙翔九天"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/A1DB5FD53ECD457F9AB540BE47C7C6B3.png" width="32" height="14" alt="龙翔九天"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="〃坏坏〓" target="_blank" class="name2">
+                            〃坏坏〓
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130907/E8E888FAFDCE4D2BA359F21A4EC37F89.png" width="134" height="100" title="、萌兔纸✿">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=17" target="_blank" title="百丽艺佳人"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/78F4DF289B5A4E7096CD759EE04FF104.png" width="32" height="14" alt="百丽艺佳人"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="、萌兔纸✿" target="_blank" class="name2">
+                            、萌兔纸✿
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130808/E8D776949C384B619109802A1B55D5E6.jpg" width="134" height="100" title="星星❤">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=17" target="_blank" title="百丽艺佳人"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/78F4DF289B5A4E7096CD759EE04FF104.png" width="32" height="14" alt="百丽艺佳人"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="星星❤" target="_blank" class="name2">
+                            星星❤
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130908/7943BDD788BD436CBDE63F32FAF69B9F.jpg" width="134" height="100" title="滴 滴 滴">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        0人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=36" target="_blank" title="开心一族"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130902/5355104A94D04D7AA94253A5A75A27B9.png" width="32" height="14" alt="开心一族"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="滴 滴 滴" target="_blank" class="name2">
+                            滴 滴 滴
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+<!--</textarea>-->
+
+<textarea class='jq-datalazyload invisible' style="height: 352px;">
+    <script type="text/javascript">
+//        alert("我开始加载！");
+    </script>
+
+<div class="other-ct">
+    <div class="middle-header">
+        <h2 class="middle-title"><a href="/StaticTemplace/www/AnchorList.aspx?type=8" title="性感" target="_blank">
+            性感
+        </a></h2>
+        <p class="middle-p">
+            <a href="http://s.baomihua.com/?from=index_sexy" target="_blank">用水葫芦随时和主播聊天吧！</a>
+        </p>
+        <a class="more" href="/StaticTemplace/www/AnchorList.aspx?type=8" target="_blank">更多&gt;</a>
+    </div>
+    <div id="xingganzhubo">
+
+        <div class="other-zb-ct">
+            <ul class="other-zb-list">
+
+                <li class="live">
+                    <a class="img" href="http://live.baomihua.com/527527" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130806/D51A84B02A24497C907E0F2431F03426.jpg" width="134" height="100" title="┈┾ 女王陛下ζ">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        4625人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=17" target="_blank" title="百丽艺佳人"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/78F4DF289B5A4E7096CD759EE04FF104.png" width="32" height="14" alt="百丽艺佳人"></a>
+                        <a href="http://live.baomihua.com/527527" title="┈┾ 女王陛下ζ" target="_blank" class="name2">
+                            ┈┾ 女王陛下ζ
+                        </a>
+                        <img class="zhuboLevel zhuboLv_4" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级4">
+                    </div>
+                </li>
+
+                <li class="live">
+                    <a class="img" href="http://live.baomihua.com/686868" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130815/33195D7B9C1D41EC945789C4F519CA17.jpg" width="134" height="100" title="╰❥☀莎莎☀">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        8400人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=17" target="_blank" title="百丽艺佳人"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/78F4DF289B5A4E7096CD759EE04FF104.png" width="32" height="14" alt="百丽艺佳人"></a>
+                        <a href="http://live.baomihua.com/686868" title="╰❥☀莎莎☀" target="_blank" class="name2">
+                            ╰❥☀莎莎☀
+                        </a>
+                        <img class="zhuboLevel zhuboLv_14" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级14">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130729/7E74C82C52AE4FEAA5F2C9BA182C265C.jpg" width="134" height="100" title="软妹子 小雅">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=16" target="_blank" title="爱乐章"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/9ED06AE73F6B4FCE839B352893331286.png" width="32" height="14" alt="爱乐章"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="软妹子 小雅" target="_blank" class="name2">
+                            软妹子 小雅
+                        </a>
+                        <img class="zhuboLevel zhuboLv_2" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级2">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130914/E1BD4CB5DCDE4BA3899460EC4700A47E.jpg" width="134" height="100" title="龙ゞ灬玲児">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=37" target="_blank" title="龙腾盛世"><img style="width:32px;height:14px;" src="" width="32" height="14" alt="龙腾盛世"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="龙ゞ灬玲児" target="_blank" class="name2">
+                            龙ゞ灬玲児
+                        </a>
+                        <img class="zhuboLevel zhuboLv_1" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级1">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130609/0B4BD239D8FE43BBBA4ED657A8C09ADE.jpg" width="134" height="100" title="风吹杨柳飞☆">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+
+                        <a href="http://s.baomihua.com/?from=xc9code" title="风吹杨柳飞☆" target="_blank" class="name3">
+                            风吹杨柳飞☆
+                        </a>
+                        <img class="zhuboLevel zhuboLv_5" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级5">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130622/0E588DD957EF407FBBDFEBE189D52B13.jpg" width="134" height="100" title="魅╰女皇つ、乖乖">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        2人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=12" target="_blank" title="蕾之魅家"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/6DA42ACB1315495F8003F5E9AF3B5775.png" width="32" height="14" alt="蕾之魅家"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="魅╰女皇つ、乖乖" target="_blank" class="name2">
+                            魅╰女皇つ、乖乖
+                        </a>
+                        <img class="zhuboLevel zhuboLv_6" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级6">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130830/1B17A448F3E84EEFAF65BE4D1E241BBC.jpg" width="134" height="100" title="ˇヾ佳儿╰︶">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=16" target="_blank" title="爱乐章"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/Apply/20130822/9ED06AE73F6B4FCE839B352893331286.png" width="32" height="14" alt="爱乐章"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="ˇヾ佳儿╰︶" target="_blank" class="name2">
+                            ˇヾ佳儿╰︶
+                        </a>
+                        <img class="zhuboLevel zhuboLv_9" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级9">
+                    </div>
+                </li>
+
+                <li>
+                    <a class="img" href="http://s.baomihua.com/?from=xc9code" target="_blank">
+                        <img src="http://resources.show.baomihua.com/UpLoad/ReHome/20130812/D7A71C2BAABD4E70BFFDAED8539458CE.jpg" width="134" height="100" title="❡＂洸滨ღۣวcۣว">
+                        <div class="other-zb-detail">
+                                    <span class="online-num">
+                                        1人在线
+                                    </span>
+                        </div>
+                        <s class="live-tag"></s>
+                    </a>
+                    <div class="other-zb-info">
+                        <a href="http://show.baomihua.com/FamilyIndex/FamilyDefault.aspx?familyId=25" target="_blank" title="追夢☆惜缘"><img style="width:32px;height:14px;" src="http://resources.show.baomihua.com/UpLoad/LiveHot/20130705/39881A61959D40F48C9231B3959BFB49.jpg" width="32" height="14" alt="追夢☆惜缘"></a>
+                        <a href="http://s.baomihua.com/?from=xc9code" title="❡＂洸滨ღۣวcۣว" target="_blank" class="name2">
+                            ❡＂洸滨ღۣวcۣว
+                        </a>
+                        <img class="zhuboLevel zhuboLv_2" src="http://static01.show.baomihua.com/img/lib/pix_l.gif" title="下一主播等级2">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+</textarea>
+
+</div>
+
+
+<div class="phx-waterfall">
+
+    <!--<textarea class='jq-datalazyload invisible' >-->
+        <!--<img src="http://img4.duitang.com/uploads/item/201206/09/20120609142036_2JTvF.thumb.600_0.jpeg" alt=""/>-->
+    <!--</textarea>-->
+    <!--<textarea class='jq-datalazyload invisible' >-->
+        <!--<img src="http://img4.duitang.com/uploads/item/201204/27/20120427131724_J4xty.thumb.600_0.jpeg" alt=""/>-->
+    <!--</textarea>-->
+
+</div>
+<script type="text/javascript">
+    var dl = new  $.Datalazyload();
+    dl.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <!--<link rel="stylesheet" href="http://g.tbcdn.cn/??tb/global/2.6.9/global-min.css,tb/tb-fp/1.8.1/style-min.css?t=20140221"/>-->
+    <style>
+
+        .J_fixed_tip{
+            position: absolute;
+        }
+        .fixed-tip{
+            position: relative;
+            display: block;
+            padding: 5px 15px;
+            border-radius: 2px;
+            border: 1px;
+            background-color: #FFFCEF;
+            border: 1px solid #ffbb76;
+            color: #DB7C22;
+            font-size: 12px;
+        }
+        .tip-arrow{
+            position: absolute;
+            top:-8px;
+        }
+        .tip-arrow span{
+            position: absolute;
+            left: 0px;
+            top:2px;
+            display: block;
+            border-width: 0px 6px 6px 6px;
+            border-style: solid;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-bottom-color: #FFFCEF;
+        }
+        .tip-arrow em{
+            position: absolute;
+            left: 0px;
+            top:1px;
+            display: block;
+            border-width: 0px 6px 6px 6px;
+            border-style: solid;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-bottom-color: #ffbb76;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h1 id="J_h">
+        标题
+        <!--<div class="J_fixed_tip">-->
+            <!--<div class=" fixed-tip clearfix">-->
+                <!--<div class="J_fixed_content fixed-content clearfix">相关提示</div>-->
+                <!--<div class="tip-arrow">-->
+                    <!--<em class="">-->
+                    <!--</em>-->
+                    <!--<span></span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+    </h1>
+</div>
+<script type="text/javascript" src="http://192.168.44.99/dropbox/FD/m_manager/js/jquery-1.10.2.min.js"></script>
+<script>
+    (function ($){
+        var TIPHTMLBEFORE =
+                "       <div class=\"J_fixed_tip\">"+
+                        "            <div class=\" fixed-tip clearfix\">"+
+                        "                <div class=\"J_fixed_content fixed-content clearfix\">";
+        var TIPHTMLAFTER =
+                "</div>"+
+                        "<div class=\"tip-arrow\">"+
+                        "                    <em class=\"\">"+
+                        "                    </em>"+
+                        "                    <span></span>"+
+                        "                </div>"+
+                        "            </div>"+
+                        "        </div>";
+        function FixedTip(option){
+            var defaultSetting = {
+                parentEl:"",//父元素
+                tipHtml:"",//标签上的文字
+                offset:[0,0],//偏移量
+                pointTo:"LEFTTOP"//箭头的指向
+            }
+            this.setting = $.extend(defaultSetting,option || {});
+        }
+        $.extend(FixedTip.prototype,{
+            createTip:function(){
+                var self = this,setting = self.setting;
+                var parentEl = setting.parentEl;
+                $(parentEl).css({
+                    "position":"relative"
+                })
+                $(parentEl).append(TIPHTMLBEFORE + setting.tipHtml  + TIPHTMLAFTER);
+                self.fixTip()
+            },
+            fixTip:function(){
+                var self = this,setting = self.setting;
+                var parentEl = setting.parentEl;
+                $(parentEl).find(".J_fixed_tip").css({
+                    left:setting.offset[0],
+                    top:setting.offset[1]
+                });
+                if(setting.pointTo == "LEFTTOP"){
+                    $(parentEl).find(".tip-arrow").css({
+                        left:"15px"
+
+                    });
+                }else if(setting.pointTo == "RIGHTTOP"){
+                    $(parentEl).find(".tip-arrow").css({
+                        right:"25px"
+                    });
+                }
+            },
+            closeTip:function(){
+            },
+            destoryTip:function(){
+            }
+        })
+        $.FixedTip = FixedTip;
+    })(jQuery)
+
+    var _tip = new $.FixedTip({
+        parentEl:"#J_h",
+        tipHtml:"我们要的提示",
+        offset:[10,50],
+        pointTo:"LEFTTOP"
+
+    })
+    _tip.createTip();
+
+</script>
+
+</body>
+</html>

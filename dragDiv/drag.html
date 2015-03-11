@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>demo</title>
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js" ></script>
+        <script src="http://cdn.bootcss.com/hammer.js/1.1.3/hammer.js"></script>
+    </head>
+    <style>
+        body{
+            height: 2000px;
+        }
+        div#J_wifidoor_trigger{
+            background-color: red;
+        }
+    </style>
+    <body>
+       <script type="text/javascript">
+           (function(){
+               if(self == top){
+                   var windowVar = {
+                       homeUrl:"http://test.cloudgat.com/",
+                       imgPath:"http://test.cloudgat.com/misc/common/frontend/images/fix_images/"
+                   };
+
+                   var fixCss = document.createElement("style");
+                   fixCss.type = "text/css";
+                   var styles = '#J_wifidoor_trigger{position: fixed;left:-9999px;cursor:pointer; top:-9999px; z-index: 99999999;width: 30px;height: 30px;background: url(\''+windowVar.imgPath+'home.png\') no-repeat;background-size: cover;}';
+                   if(fixCss.styleSheet){
+                       fixCss.stylesheet.cssText = styles;
+                   }else{
+                       fixCss.appendChild(document.createTextNode(styles));
+                   }
+                   document.body.appendChild(fixCss);
+                   var adItem = document.createElement("div");
+                   document.body.appendChild(adItem);
+                   adItem.setAttribute("id","J_wifidoor_trigger");
+
+                   //右下角可以拖动的浮标
+                   //初始化的right，bottom
+                   var _right = 10,_bottom = 20;
+                   var triggerItem = document.getElementById("J_wifidoor_trigger");
+                   //获取元素的宽高
+                   var itemWidth = triggerItem.offsetWidth,itemHeight = triggerItem.offsetWidth;
+                   var _top = document.documentElement.clientHeight - _right - itemWidth;
+                   var _left = document.documentElement.clientWidth - _bottom - itemHeight;
+                   triggerItem.style.top = _top + "px";
+                   triggerItem.style.left = _left + "px";
+                   triggerItem.addEventListener("touchstart",function(ev){
+                       ev.preventDefault();//阻止其他事件
+                       var e = ev.changedTouches ? ev.changedTouches[0]:ev.targetTouches[0];
+                       var bodyHeight = document.body.clientHeight;
+                       var bodyWidth = document.body.clientWidth;
+                       //获取点击的相对位移
+                       var touchX = itemWidth/2;
+                       var touchY = itemHeight/2;
+                       triggerItem.style.WebkitTransition = "0";
+                       triggerItem.style.transition = "0";
+                       triggerItem.addEventListener("touchmove",function(ev){
+                           ev.preventDefault();//阻止其他事件
+                           var e = ev.changedTouches ? ev.changedTouches[0]:ev.targetTouches[0];
+                           var moveX = e.pageX ;
+                           var moveY = e.pageY;
+                           console.log("touchX" + touchX + " " + "touchY" + touchY)
+                           var cMoveX = (moveX - (_left + document.body.scrollLeft) -touchX );
+                           var cMoveY = (moveY - (_top + document.body.scrollTop) - touchY);
+                           setTimeout(function(){
+                               var transform = "translate(" + cMoveX + "px," + cMoveY  + "px)";
+                               triggerItem.style.transform = transform;
+                               triggerItem.style.oTransform = transform;
+                               triggerItem.style.msTransform = transform;
+                               triggerItem.style.mozTransform = transform;
+                               triggerItem.style.webkitTransform = transform;
+                           },1)
+                       },false);
+
+                       triggerItem.addEventListener("touchend",function(ev){
+                           ev.preventDefault();//阻止其他事件
+                           var e = ev.changedTouches ? ev.changedTouches[0]:ev.targetTouches[0];
+                           var moveX = e.pageX ;
+                           var moveY = e.pageY ;
+                           setTimeout(function(){
+                           },1);
+                       },false);
+
+                   })
+               }
+
+           })()
+
+    </script>
+    </body>
+</html>

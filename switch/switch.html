@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>轮播组件</title>
+    <script type="text/javascript" src="http://static01.baomihua.com/js/lib/jquery-1.4.4.min.js?t=20120926.js"></script>
+    <script type="text/javascript" src="switch.js"></script>
+    <link rel="stylesheet" href="http://static01.baomihua.com/css/www/v1/idx-min.css?t=20130608.css"/>
+    <style type="text/css">
+        h1 {
+            /*background: url("images/paddle_prev.png");*/
+        }
+        .J_switch {
+            margin: auto;
+        }
+        /*.switch_content li {*/
+            /*width: 400px;*/
+            /*height: 258px;*/
+            /*background: url("images/loading.gif") center center no-repeat;*/
+        /*}*/
+        .ss_switch_bd {
+            width: 400px;
+            height: 258px;
+        }
+        .ss_switch_main-ct{
+            width: 400px;
+            height: 258px;
+            overflow: hidden;
+        }
+        .ss_switch_content li {
+            height: 258px;
+            width: 400px;
+        }
+        .ss_switch_content {
+
+            position: relative;
+        }
+        .ss_switch_bd {
+            position: relative;
+        }
+        .ss_switch_nav {
+            position: absolute;
+            right: 0px;
+            bottom: 8px;
+        }
+        .ss_switch_nav li {
+            float: left;
+            margin-right: 8px;
+            color: #f60;
+            background-color: #fff;
+            font-size: 13px;
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+            text-align: center;
+            line-height: 20px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-family: "Tahoma";
+        }
+        .ss_switch_nav .current {
+            background-color: #f60;
+            color: #fff;
+        }
+        .btn-hover {
+            position: absolute;
+            width: 38px;
+            height: 79px;
+            z-index: 9;
+            top: 80px;
+            cursor: pointer;
+            display: none;
+        }
+        .ss_switch_bd  s {
+            width: 38px;
+            height: 79px;
+            display: block;
+        }
+        .ss_switch_bd .prev s {
+            background: url("images/paddle_prev.png") no-repeat transparent;
+            _background-image: none;
+            _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://192.168.30.19/plugs/switch/images/paddle_prev.png", sizingMethod="scale");
+        }
+        .ss_switch_bd .prev {
+            left: 0px;
+        }
+        .ss_switch_bd .next {
+            right: 0px;
+        }
+
+        .ss_switch_bd .next s {
+            background: url("images/paddle_next.png") no-repeat;
+            _background-image: none;
+            _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://192.168.30.19/plugs/switch/images/paddle_next.png", sizingMethod="scale");
+        }
+        .ss_switch_bd:hover .btn-hover {
+            display: block;
+        }
+        /*for ie6*/
+        .btn-show {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<h1 style="text-align: center;font-size: 18px;margin:18px 0 18px 0;">这是一个轮播组件</h1>
+
+<!--保持这样的html结构-->
+<div id="J_switch" class="J_switch ss_switch_bd">
+    <div class="ss_switch_main-ct">
+        <ol class="ss_switch_content">
+            <li>
+                <a href="#" target="_blank">
+                    <img src="images/1.png" alt=""/>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" target="_blank">
+                    <img src="images/2.png" alt=""/>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" target="_blank">
+                    <img src="images/3.png" alt=""/>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" target="_blank">
+                    <img src="images/4.png" alt=""/>
+                </a>
+            </li>
+        </ol>
+    </div>
+
+    <ul class="ss_switch_nav">
+    </ul>
+
+    <div class="prev btn-hover ">
+        <s></s>
+    </div>
+    <div class="next btn-hover ">
+        <s></s>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var a = new $.SimpleSwitch({
+        el:"#J_switch",
+        effect:"scrollx",
+        circle:false
+    });
+    a.init();
+
+    $("#J_switch .prev").click(function(){
+        if(!$(this).hasClass("disable")){
+            a.prev();
+        }
+
+    });
+    $("#J_switch .next").click(function(){
+        if(!$(this).hasClass("disable")){
+            a.next();
+        }
+    });
+    var br =$.browser;
+    if(br.msie && br.version < 7){
+        $("#J_switch").mouseenter(function(){
+            $("#J_switch .btn-hover").addClass("btn-show");
+        });
+        $("#J_switch").mouseleave(function(){
+            $("#J_switch .btn-hover").removeClass("btn-show");
+        });
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>遮罩</title>
+    <script src="http://huodong.show.baomihua.com/js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy.js">
+    </script>
+    <script type="text/javascript" src="mask.js"></script>
+</head>
+<body style=" ">
+<h1>我是遮罩的标题</h1>
+<h2 style="position: absolute;z-index: 9999;">
+    关闭
+</h2>
+<h3>
+加绑
+</h3>
+<input type="button" id="J_btn" value="事件"/>
+<h4>
+    解绑
+</h4>
+
+<div class="dialog_fullbg" id="idalog_fullbg" style="width: 100%;
+height: 100%;
+background-color: #000;
+filter: alpha(opacity=60);
+opacity: 0.6;
+z-index: 999;
+position: fixed;
+left: 0;
+top: 0;
+zoom: 1;">
+    <!--[if lte IE 6]>
+        <iframe  style='position:absolute ;left:0px;top:0px;width:100%;height:100%;filter:alpha(opacity=0);z-index:-1;border: none;'>
+        </iframe>
+    <![endif]-->
+
+</div>
+
+
+
+<select name="" id="">
+    <option value="1">fd</option>
+</select>
+</body>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        var a = new $.mask();
+        $("h1").click(function(){
+            a.show();
+            var fff = 2;
+            a.setting.self.click(function(){
+                a.hide();
+            })
+        });
+
+        $("h2").click(function(){
+            a.hide();
+        })
+
+    })
+
+</script>
+</html>
