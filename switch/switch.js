@@ -7,7 +7,7 @@
         var defaultConfig = {
             el:"#J_switch",          //父元素
             autoplay:true,           //是否自动播放
-            interval:3,              //轮播切换时间：默认5s
+            interval:5,              //轮播切换时间：默认5s
             hoverpause:true,          //houver,轮播是否停止
             effect:"",                 //scrollx\scrolly\fade
             easing:"swing",
@@ -120,10 +120,13 @@
                     });
                 }else{
                     _cont.css({
-                        "display":"none"
+                        "position":"absolute",
+                        "z-index":1,
+                        "opacity":0
                     });
                     _cont.eq(0).css({
-                        "display":"block"
+                        "z-index":2,
+                        "opacity":1
                     });
                 }
             },
@@ -232,13 +235,18 @@
                         });
                         _content_li.eq(_count).css({
                             "position":"static",
-                            "top":  "0px"
+                            "top":"0px"
                         });
                     }
                 }else if(_effect === "fade"){
                     _content_li.stop(true,true);
-                    _content_li.eq(_oldIndex).fadeOut("fast");
-                    _content_li.eq(index).fadeIn("fast");
+                    _content_li.eq(index).css("opacity","1");
+                    _content_li.eq(_oldIndex).animate({
+                        opacity:0
+                    },500,"swing",function(){
+                        _content_li.eq(_oldIndex).css("zIndex","1");
+                        _content_li.eq(index).css("zIndex","2");
+                    });
                 }
                 else{
                     _content_li.eq(_oldIndex).hide();

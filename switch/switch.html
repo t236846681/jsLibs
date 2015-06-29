@@ -42,6 +42,7 @@
             position: absolute;
             right: 0px;
             bottom: 8px;
+            z-index: 2;
         }
         .ss_switch_nav li {
             float: left;
@@ -148,8 +149,8 @@
 <script type="text/javascript">
     var a = new $.SimpleSwitch({
         el:"#J_switch",
-        effect:"scrollx",
-        circle:false
+        effect:"fade",
+        circle:true
     });
     a.init();
 
