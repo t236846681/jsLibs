@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <title>前端html转js</title>
+    <meta charset="utf-8"/>
+    <style>
+        body {
+            width: 750px;
+            overflow-x: hidden;
+            font-family: "Microsoft Yahei";
+        }
+
+        img {
+            margin: 5px;
+            border: 2px solid black;
+            vertical-align: middle;
+            width: 75px;
+            height: 75px;
+        }
+        .tarea{
+            display: block;
+            width:90%;
+            height:210px;
+            margin: 0 auto;
+            border:1px solid #ddd;
+            font-size: 14px;
+            font-family: "Consolas","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+        }
+        h2{
+            font-weight: normal;
+            text-indent: 5%;
+        }
+        input[type=button]{
+            background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75);
+            color: #444;
+            font: inherit;
+            margin: 0 1px 0 0;
+            outline: none;
+            text-shadow: 0 1px 0 rgb(240, 240, 240);
+        }
+        .subbtn{
+            margin-left: 5%;
+            margin-bottom: 15px;
+        }
+        #result{
+            margin-bottom: 20px;
+        }
+
+    </style>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+</head>
+<body>
+
+
+<div class="page-tools">
+    <h2 class="sitetip">贴入要转换的HTML代码：</h2>
+    <div class="subbtn">
+        <input type="button" id="J_js1" value="转为单引号" class="btn">
+        <input type="button" id="J_js" value="转为双引号" class="btn">
+        <label for="arrays-sel"><input type="checkbox" id="arrays-sel"> 数组拼接</label>
+    </div>
+    <textarea class="tarea" spellcheck="false" id="content" style="float:none"></textarea>
+    <h2 class="sitetip">转换结果：</h2>
+    <textarea spellcheck="false"  class="tarea" id="result"></textarea>
+</div>
+</body>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+</html>
