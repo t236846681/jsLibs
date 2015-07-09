@@ -68,6 +68,4 @@
     );
 
     $.Datalazyload = Datalazyload;
-
-
 })(jQuery);

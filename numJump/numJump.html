@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <p class="data-increase" data-num="18.25">0</p>
+    <p class="data-increase" data-num="12.00">0</p>
+    <p><span class="data-increase" data-num="80.00">0</span> %</p>
+</div>
+
+
+
+
+<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.10.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://libs.useso.com/js/require.js/2.1.9/require.min.js"></script>
+<!--<script type="text/javascript" src="IncreaseNumber.js"></script>-->
+
+<script type="text/javascript">
+
+
+function NumberAdd(options){
+    this.options = {
+        elClass:'.data-increase',
+        stepNum:30,
+        timer:10
+    };
+    this._init();
+}
+
+$.extend(NumberAdd.prototype,{
+    _init:function(){
+        var that = this;
+        $(that.options.elClass).each(function(i){
+            //初始化数字为0
+            var dataNum = $(this).attr('data-num'),dataTemp = dataNum;
+            //获取小数点的index
+            var pIndex = dataNum.indexOf('.');
+            //小数点向后面移动到末尾
+            var noPNum = dataTemp.replace(".","");
+            var numLength = noPNum.length;
+            //获取step
+            var step = Math.ceil(noPNum/that.options.stepNum);
+            //获取当前时间戳
+            var timeStart = (new Date()).getTime();
+            _setValue($(this),0,that.options.timer);
+            function _setValue(target,currentValue,timers){
+                var _currentValue = currentValue;
+                setTimeout(function(){
+                    //判断当前值是否超过默认值，超过，不执行；不超过，执行下面的代码
+                    if(_currentValue < noPNum){
+                        //数字加值step
+                        _currentValue = _currentValue + step;
+                        //拼接还原数字，
+                        var allNum = (new Array(numLength - _currentValue.toString().length + 1).join('0') + _currentValue).toString().split('');
+                        var newNum = allNum;
+                        if(pIndex!=-1){
+                            newNum = allNum.slice(0,pIndex).join('') + "." + allNum.slice(pIndex).join('');
+                        }
+                        $(target).html(newNum);
+                        console.log(newNum)
+                        //判断当前时间是否超过3秒，超过的话，直接显示默认的值
+                        if((new Date).getTime() - timeStart > 3000){
+                            $(target).html(dataNum);
+                        }else{ //否则，递归
+                            _setValue(target,_currentValue,timers + 1);
+                        }
+                    }else{
+                        $(target).html(dataNum);
+                    }
+                },timers);
+            };
+        });
+    }
+//    _setValue:function(target,currentValue){
+//
+//
+//    }
+});
+
+var increase = new NumberAdd();
+
+//increase._init();
+</script>
+
+</body>
+</html>
