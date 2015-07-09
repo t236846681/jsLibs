@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>抽奖活动</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        html{height:100%;font-size:62.5%;background-color:#fff}
+        @media screen and (max-width:640px){html{font-size:53.33333333%}}
+        @media screen and (max-width:560px){html{font-size:46.66666667%}}
+        @media screen and (max-width:480px){html{font-size:40%}}
+        @media screen and (max-width:400px){html{font-size:33.33333333%}}
+        @media screen and (max-width:320px){html{font-size:26.66666667%}}
+        body {
+            position:relative;
+            margin:0 auto;
+            max-width:750px;
+            min-width:320px;
+            min-height:100%;
+            background-color: #c8002a;
+            padding-bottom: 40px;
+            font-size: 75%;
+        }
+
+        .jp-ct img{
+            width: 100%;
+        }
+        .jp-ct{
+            position: relative;
+        }
+        .btn_start{
+            width:28%;
+            position: absolute;
+            left: 50%;
+            margin-left: -14%;
+            top: 50%;
+            margin-top: -18%;
+
+        }
+        .pan-ct{
+            position: relative;
+            top:12%;
+            left: 50%;
+            width:88%;
+            margin-left: -44%;
+            /*background: url('images/icon_pan.png');*/
+        }
+        .btn_start_mask{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9;
+        }
+        html{-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jp-ct">
+        <div class="pan-ct">
+            <img id="J_pan" class="icon_pan" src="images/icon_pan.png" alt=""/>
+            <div id="J_btn_start" class="btn_start_mask">
+            </div>
+            <a  class="btn_start" href="javascript:void(0);">
+                <img src="images/icon_begin.png" alt=""/>
+            </a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.rotate.min.js"></script>
+<script type="text/javascript">
+    var prideArray = [
+        {
+            deg:0,
+            msg:"1"
+        },
+        {
+            deg:45,
+            msg:"2"
+        },
+        {
+            deg:90,
+            msg:"3"
+        },
+        {
+            deg:135,
+            msg:"4"
+        },
+        {
+            deg:180,
+            msg:"5"
+        },
+        {
+            deg:225,
+            msg:"6"
+        },
+        {
+            deg:270,
+            msg:"7"
+        },
+        {
+            deg:315,
+            msg:"8"
+        }
+    ];
+    var isRuning = false;
+    function showAlert(){
+        $("#J_mask").show();
+        $("#J_over").show();
+    }
+    function hideAlert(){
+        $("#J_mask").hide();
+        $("#J_over").hide();
+    }
+    $("#J_close").click(function(){
+        hideAlert();
+    });
+    $("#J_btn_start").click(function(){
+        var message = prideArray[1].msg;
+        var deg = prideArray[1].deg;
+        if(isRuning) return;
+        isRuning = true;
+        $("#J_pan").stopRotate();
+        $("#J_pan").rotate({
+            angle:0,
+            duration: 6000,
+            animateTo: deg + 1800,
+            callback: function () {
+                isRuning = false;
+                alert(message)
+            }
+        })
+    });
+</script>
+</body>
+</html>
+
